@@ -1,0 +1,167 @@
+.info {
+  position: relative;
+  margin-top: -80px; /* Đặt khoảng cách dưới header để nội dung không bị chồng lên header */
+  margin-bottom: 20px;
+}
+
+.poster {
+  position: relative;
+  width: 100%;
+  height: 800px; /* Điều chỉnh chiều cao nếu cần */
+  overflow: hidden;
+
+  .img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh bao phủ toàn bộ khu vực */
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Tạo lớp phủ tối để làm nổi bật văn bản */
+
+    .introInfo {
+      margin: 300px 0; /* Căn giữa nội dung */
+      width: 50%; /* Chiếm nửa chiều rộng */
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        width: 80%;
+        font-size: 3em; /* Điều chỉnh kích thước nếu cần */
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+      }
+
+      p {
+        width: 80%;
+        font-size: 1.2vw; /* Điều chỉnh kích thước nếu cần */
+        line-height: 1.6;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    .intro-bottom {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      justify-content: space-between;
+
+
+      .bottom-play {
+        width: 10%;
+        margin-left: 80px;
+        margin-right: 20px;
+      }
+
+      .bottom-otherInfo {
+        width: 80%;
+      }
+
+      .bottom-play button{
+        width: 150px;
+        height: 50px;
+        text-align: center;
+        font-size: 25px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.5);
+        }
+      }
+
+      .icon{
+        margin: 0 10px;
+      }
+
+      .bottom-play button{
+        width: 150px;
+        height: 50px;
+        text-align: center;
+        font-size: 25px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.5);
+        }
+      }
+
+      .bottom-otherInfo button{
+        width: 250px;
+        height: 50px;
+        text-align: center;
+        font-size: 25px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.5);
+        }
+      }
+
+      
+
+      .bottom-restriction {
+        width: 10%;
+        text-align: end;
+        box-sizing: border-box;
+
+        p{
+        height: 50px;
+        text-align: center;
+        font-size: 25px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+        box-sizing: border-box;
+        margin: 0;
+        }
+
+      }
+    }
+  }
+}
