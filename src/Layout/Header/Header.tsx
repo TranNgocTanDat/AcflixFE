@@ -1,7 +1,7 @@
-import Intro from "../../../../component/intro/intro";
-import HeaderLast from "./HeaderLast";
-import HeaderLogo from "./HeaderLogo";
-import HeaderNavbar from "./HeaderNavbar";
+import Intro from "../../component/Intro/Intro.tsx";
+import HeaderLast from "./HeaderLast.tsx";
+import HeaderLogo from "./HeaderLogo.tsx";
+import HeaderNavbar from "./HeaderNavbar.tsx";
 import "./style.css";
 
 const Header = () => {

@@ -1,8 +1,8 @@
 import { Route, RouteObject, RouterProvider, Routes, createBrowserRouter } from "react-router-dom";
 // import App from "../App";
-import MasterLayout from "../pages/users/theme/masterLayout";
+import MasterLayout from "../Layout/MasterLayout";
 import React from "react";
-import HomePage from "../pages/users/homePage/homePage";
+import HomePage from "../pages/HomePage/HomePage.tsx";
 
 const AppRouter: React.FC = () => {
     const userRouters: RouteObject[] = [

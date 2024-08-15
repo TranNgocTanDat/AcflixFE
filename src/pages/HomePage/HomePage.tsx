@@ -1,5 +1,5 @@
 
-import SliderHome from '../../../component/top/Slider';
+import SliderHome from '../../component/top/Slider.tsx';
 
 
 function HomePage() {

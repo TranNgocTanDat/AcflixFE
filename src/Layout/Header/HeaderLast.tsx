@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import Search from "./Search";
+import Search from "./Search.tsx";
 import { IoNotifications } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 

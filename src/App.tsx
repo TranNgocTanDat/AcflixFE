@@ -1,7 +1,7 @@
 
 import { Outlet } from 'react-router-dom'
 import './App.css'
-import HomePage from './pages/users/homePage/homePage'
+import HomePage from './pages/HomePage/HomePage.tsx'
 
 function App() {
 
