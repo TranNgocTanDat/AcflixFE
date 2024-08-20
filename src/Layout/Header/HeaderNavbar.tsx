@@ -1,39 +1,111 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
-
-const Navbar = () => {
-  // Toogle Menu
-  const [MobileMenu, setMobileMenu] = useState(false)
-  return (
-    <>    
-          <div className='navlink'>
-            <ul className={MobileMenu ? "nav-links-MobileMenu" : "link f_flex capitalize"} onClick={() => setMobileMenu(false)}>
-              <li className="navlink__item">
-                <Link to='/'>Trang chủ</Link>
-              </li>
-              <li className="navlink__item">
-                <Link to='/pages'>Phim T.hình</Link>
-              </li>
-              <li className="navlink__item">
-                <Link to='/user'>Phim</Link>
-              </li>
-              <li className="navlink__item">
-                <Link to='/vendor'>Mới & Phổ biến</Link>
-              </li>
-              <li className="navlink__item">
-                <Link to='/track'>Danh sách của tôi</Link>
-              </li > 
-              <li className="navlink__item">
-                <Link to='/contact'>contact</Link>
-              </li>
-            </ul>
-
-            {/* <button className='toggle' onClick={() => setMobileMenu(!MobileMenu)}>
-              {MobileMenu ? <i className='fas fa-times close home-btn'></i> : <i className='fas fa-bars open'></i>}
-            </button> */}
-          </div>
-    </>
-  )
-}
-
-export default Navbar
+  import { useState } from "react";
+  import { Link } from "react-router-dom";
+  
+  const Navbar = () => {
+    const [MobileMenu, setMobileMenu] = useState(false);
+  
+    return (
+      <>
+        <div className="navlink">
+          <ul
+            className={
+              MobileMenu ? "nav-links-MobileMenu" : "link f_flex capitalize"
+            }
+            onClick={() => setMobileMenu(false)}
+          >
+            <li className="navlink__item">
+              <Link to="/">Trang chủ</Link>
+            </li>
+            <li className="navlink__item">
+              <Link to="/pages">Phim T.hình</Link>
+            </li>
+            <li className="navlink__item">
+              <Link to="/user">Phim Lẻ</Link>
+            </li>
+            <li className="navlink__item">
+              <Link to="/vendor">Phim bộ</Link>
+            </li>
+            <li className="navlink__item genre__item">
+              Thể loại
+              <div className="genre">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <Link to="/genre">Hành động</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Kinh dị</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Hoạt hình</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Tình cảm</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Hài hước</Link>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Link to="/genre">Chiến tranh</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Cổ trang</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Âm nhạc</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Khoa học</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Thể thao</Link>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Link to="/genre">Tài liệu</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Gia đình</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Tội phạm</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Lịch sử</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Cấp 3</Link>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Link to="/genre">Phiêu lưu</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Võ thuật</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Thần thoại</Link>
+                      </td>
+                      <td>
+                        <Link to="/genre">Tâm lý</Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </li>
+            <li className="navlink__item">
+              <Link to="/contact">Danh sách yêu thích</Link>
+            </li>
+          </ul>
+        </div>
+      </>
+    );
+  };
+  
+  export default Navbar;

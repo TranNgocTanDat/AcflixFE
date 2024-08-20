@@ -4,6 +4,8 @@ import useDatas from "../../api/useData";
 import { FaPlay } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import "./style.css";
+import { Link } from "react-router-dom";
+import Search from "../search/Search";
 
 const Intro = () => {
   const { dataFilm, error } = useDatas();
@@ -35,25 +37,25 @@ const Intro = () => {
                   <h1>{film.name}</h1>
                   <p>{film.description}</p>
                 </div>
-                  <div className="intro-bottom">
-                    <div className="bottom-play">
+                <div className="intro-bottom">
+                  <div className="bottom-play">
+                    <Link to={`/detail/${film.id}`} className="bottom-detail">
                       <button>
-                        <FaPlay className="icon"/>
+                        <FaPlay className="icon" />
                         Phát
                       </button>
-                    </div>
-                    <div className="bottom-otherInfo">
-                      <button>
-                        <FaCircleInfo className="icon"/>
-                        Thông tin khác
-                      </button>
-                    </div>
-                    <div className="bottom-restriction">
-                      <p>
-                      {film.restriction}+
-                      </p>
-                      </div>
+                    </Link>
                   </div>
+                  <div className="bottom-otherInfo">
+                    <button>
+                      <FaCircleInfo className="icon" />
+                      Thông tin khác
+                    </button>
+                  </div>
+                  <div className="bottom-restriction">
+                    <p>{film.restriction}+</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

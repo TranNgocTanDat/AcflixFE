@@ -1,16 +1,17 @@
-@charset "UTF-8";
 .header {
-  position: fixed; /* Đặt header ở vị trí cố định */
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* Chiều cao của header */
+  height: 80px;
   display: flex;
-  z-index: 1000; /* Đảm bảo header luôn ở trên cùng */
-  color: white; /* Đặt màu chữ cho header */
+  z-index: 100;
+  color: white;
+  align-items: center;
+  text-align: center;
 }
 .header .icon {
-  font-size: 30px;
+  font-size: 24px;
   margin: 0 10px;
   cursor: pointer;
   color: white;
@@ -21,6 +22,7 @@
 }
 .header .navlink {
   width: 47%;
+  position: relative;
 }
 .header .navlink .navlink__item {
   padding: 10px;
@@ -28,6 +30,7 @@
   cursor: pointer;
   transition: all 0.3s;
   list-style: none;
+  position: relative;
 }
 .header .navlink .navlink__item:hover {
   background-color: #f1f1f1;
@@ -35,6 +38,38 @@
 .header .navlink .navlink__item a {
   text-decoration: none;
   color: white;
+}
+.header .navlink .navlink__item .genre {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 500px;
+  margin-top: 0px;
+  background-color: rgb(80, 79, 79);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.header .navlink .navlink__item .genre table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.header .navlink .navlink__item .genre table tr,
+.header .navlink .navlink__item .genre table td {
+  padding: 10px;
+}
+.header .navlink .navlink__item .genre table td {
+  text-align: center;
+}
+.header .navlink .navlink__item .genre table td a {
+  text-decoration: none;
+  color: black;
+}
+.header .navlink .navlink__item .genre table td a:hover {
+  color: #f1f1f1;
+}
+.header .navlink .navlink__item:hover .genre {
+  display: block;
 }
 .header .header__last {
   width: 40%;
@@ -60,18 +95,15 @@
   opacity: 0;
   transition: width 0.3s, opacity 0.3s;
 }
-.header .header__last .search-box input:focus {
-  width: 200px;
-  opacity: 1;
-  cursor: text;
-}
 .header .header__last .search-box .iconSearch {
-  font-size: 30px;
+  font-size: 24px;
   margin: 0 10px;
   cursor: pointer;
   color: white;
   transition: color 0.3s;
 }
-.header .header__last .search-box .iconSearch:hover {
+.header .header__last .search-box .iconSearch:hover ~ input {
   color: rgb(161, 161, 161);
+  width: 200px;
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

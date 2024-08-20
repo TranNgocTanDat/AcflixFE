@@ -1,0 +1,11 @@
+.slider {
+  width: 97%;
+  height: auto;
+  box-sizing: border-box;
+  padding-left: 20px;
+  position: relative;
+  overflow: visible;
+}
+.slider .slider-content {
+  position: relative;
+}/*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@ import { Route, RouteObject, RouterProvider, Routes, createBrowserRouter } from 
 import MasterLayout from "../Layout/MasterLayout";
 import React from "react";
 import HomePage from "../pages/HomePage/HomePage.tsx";
+import Result from "../component/search/Result.tsx";
 
 const AppRouter: React.FC = () => {
     const userRouters: RouteObject[] = [
@@ -10,6 +11,10 @@ const AppRouter: React.FC = () => {
             path: '/',
             element: <HomePage />,
         },
+        {
+            path: 'result',
+            element: <Result />,
+        }
         
     ];
 

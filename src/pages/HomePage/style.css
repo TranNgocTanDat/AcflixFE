@@ -1,1 +1,19 @@
-/*# sourceMappingURL=style.css.map */
+.container {
+  width: 100%;
+  height: auto;
+}
+.container .slide {
+  margin-left: 50px;
+  margin-top: -250px;
+  margin-bottom: 285px;
+}
+.container .slide .slide-title {
+  position: relative;
+  z-index: 10000;
+  color: white;
+  height: 50px;
+  margin-left: 35px;
+  font-size: 20px;
+  font-weight: bold;
+  align-content: center;
+}/*# sourceMappingURL=style.css.map */

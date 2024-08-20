@@ -1,4 +1,4 @@
-import Intro from "../../component/Intro/Intro.tsx";
+
 import HeaderLast from "./HeaderLast.tsx";
 import HeaderLogo from "./HeaderLogo.tsx";
 import HeaderNavbar from "./HeaderNavbar.tsx";
@@ -15,7 +15,7 @@ const Header = () => {
 
         <HeaderLast />
       </div>
-      <Intro />
+
     </>
   );
 };

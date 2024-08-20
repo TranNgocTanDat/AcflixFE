@@ -1,17 +1,16 @@
 .info {
   position: relative;
   margin-top: -80px; /* Đặt khoảng cách dưới header để nội dung không bị chồng lên header */
-  margin-bottom: 20px;
 }
 
 .poster {
   position: relative;
   width: 100%;
-  height: 800px; /* Điều chỉnh chiều cao nếu cần */
+  height: 900px; /* Điều chỉnh chiều cao nếu cần */
   overflow: hidden;
 
   .img-wrapper {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -33,14 +32,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     color: white;
-    background: rgba(0, 0, 0, 0.5); /* Tạo lớp phủ tối để làm nổi bật văn bản */
+    background: rgba(20, 20, 20, 0.8); /* Màu tối hơn, gần với màu #141414 */
+    height: 100%; /* Chỉ làm tối 20% chiều cao phía dưới */
+    background: linear-gradient(
+      to top,
+      rgba(20, 20, 20, 0.9),
+      /* Màu đen đậm */ transparent
+    ); /* Tạo hiệu ứng chuyển màu từ tối đến trong suốt */
 
     .introInfo {
-      margin: 300px 0; /* Căn giữa nội dung */
+      margin: 200px 0; /* Căn giữa nội dung */
       width: 50%; /* Chiếm nửa chiều rộng */
       margin-bottom: 0;
       display: flex;
@@ -66,13 +69,13 @@
 
     .intro-bottom {
       width: 100%;
-      height: 200px;
+      height: 35%;
       display: flex;
       justify-content: space-between;
-
+      align-items: center;
 
       .bottom-play {
-        width: 10%;
+
         margin-left: 80px;
         margin-right: 20px;
       }
@@ -81,8 +84,8 @@
         width: 80%;
       }
 
-      .bottom-play button{
-        width: 150px;
+      .bottom-play button {
+        width: 30%;
         height: 50px;
         text-align: center;
         font-size: 25px;
@@ -99,11 +102,11 @@
         }
       }
 
-      .icon{
+      .icon {
         margin: 0 10px;
       }
 
-      .bottom-play button{
+      .bottom-play button {
         width: 150px;
         height: 50px;
         text-align: center;
@@ -121,7 +124,7 @@
         }
       }
 
-      .bottom-otherInfo button{
+      .bottom-otherInfo button {
         width: 250px;
         height: 50px;
         text-align: center;
@@ -139,28 +142,25 @@
         }
       }
 
-      
-
       .bottom-restriction {
         width: 10%;
         text-align: end;
         box-sizing: border-box;
 
-        p{
-        height: 50px;
-        text-align: center;
-        font-size: 25px;
-        background: rgba(255, 255, 255, 0.2);
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s;
-        box-sizing: border-box;
-        margin: 0;
+        p {
+          height: 50px;
+          text-align: center;
+          font-size: 25px;
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: background 0.3s;
+          box-sizing: border-box;
+          margin: 0;
         }
-
       }
     }
   }
