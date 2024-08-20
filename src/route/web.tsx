@@ -19,7 +19,7 @@ const AppRouter: React.FC = () => {
       element: <HomePage />,
     },
     {
-      path: "result",
+     path: "/result",
       element: <Result />,
     },
   ];
