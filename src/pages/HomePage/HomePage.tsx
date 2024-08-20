@@ -1,13 +1,7 @@
-
-import { useEffect, useState } from "react";
 import useDatas from "../../api/useData";
 import Intro from "../../component/poster/intro";
 import SliderHome from "../../component/sliderShow/Slider";
 import "./style.css";
-import CategoryDetails from "../../model/CategoryDetails";
-import filmApi from "../../api/filmApi";
-
-
 
 const HomePage = () => {
   const { dataFilm, error } = useDatas();
@@ -54,8 +48,7 @@ const HomePage = () => {
         <SliderHome dataFilm={dataFilm} error={error} />
       </div>
     </div>
-  ); 
-}
+  );
+};
 
 export default HomePage;
-
