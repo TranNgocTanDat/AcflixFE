@@ -17,6 +17,15 @@ const Intro = () => {
   // Chọn một mục ngẫu nhiên từ danh sách dữ liệu
   const randomFilm = dataFilm.length > 0 ? getRandomItem(dataFilm) : null;
 
+  const getCoverSrc = (data: Film) =>{
+    return data.cover.reduce((acc, item) => {
+      if (item.width > acc.width) {
+        return item;
+      }
+      return acc;
+    })
+  }
+
   return (
     <>
       <div>
@@ -27,7 +36,7 @@ const Intro = () => {
               {randomFilm.cover.length > 0 && (
                 <div className="img-wrapper">
                   <img
-                    src={randomFilm.cover[0].url}
+                    src={getCoverSrc(randomFilm).url}
                     alt=""
                     className="img-poster"
                   />

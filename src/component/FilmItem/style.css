@@ -1,4 +1,6 @@
 .box {
+  width: auto;
+  height: auto;
   position: relative;
   margin-left: 16px;
 }
@@ -18,10 +20,6 @@
   background-size: contain;
   background-repeat: no-repeat;
   aspect-ratio: 2/3;
-}
-.box .box-poster .name {
-  position: relative;
-  margin-top: -30px;
 }
 .box .box-film {
   display: none;

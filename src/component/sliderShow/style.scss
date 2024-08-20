@@ -9,58 +9,5 @@
   .slider-content {
     position: relative;
 
-    // .box {
-    //   position: relative;
-
-    //   .box-poster {
-    //     width: 230px;
-    //     text-align: center;
-    //     border-radius: 10px;
-    //     box-sizing: border-box;
-    //     cursor: pointer;
-    //     position: relative;
-    //     z-index: 1;
-
-    //     .image {
-    //       border-radius: 10px;
-    //       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    //       background-size: contain;
-    //       background-repeat: no-repeat;
-    //       aspect-ratio: 2/3;
-    //     }
-    //   }
-
-    //   .box-film {
-    //     display: none; // Ẩn phần tử ban đầu
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 93.8%; // Đặt width bằng 100% để nó phủ toàn bộ chiều rộng của .box
-    //     height: 100%; // Đặt height bằng 100% để nó phủ toàn bộ chiều cao của .box
-    //     background-color: rgba(0, 0, 0, 0.8); // Nền bán trong suốt
-    //     border-radius: 10px;
-    //     z-index: 9999; // Đảm bảo box-film hiển thị trên cùng
-    //     color: white;
-    //     padding: 20px;
-    //     text-align: center;
-    //     box-sizing: border-box; // Đảm bảo padding không làm tăng kích thước
-    //     overflow: auto; // Thêm overflow để nội dung không bị cắt
-    //   }
-
-    //   &:hover .box-film {
-    //     display: block; // Hiển thị box-film khi hover hoặc focus vào box
-
-        
-    //     .icon-play {
-    //       font-size: 50px;
-    //       color: white;
-    //       cursor: pointer;
-    //       position: absolute;
-    //       top: 50%;
-    //       left: 50%;
-    //       transform: translate(-50%, -50%);
-    //     }
-    //   }
-    // }
   }
 }

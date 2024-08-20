@@ -12,15 +12,19 @@ import HomePage from "../pages/HomePage/HomePage.tsx";
 import Result from "../component/search/Result.tsx";
 import Login from "../pages/Login/Login.tsx";
 
+
 const AppRouter: React.FC = () => {
+
   const userRouters: RouteObject[] = [
     {
       path: "/",
       element: <HomePage />,
     },
     {
-     path: "/result",
+      path: "/result",
       element: <Result />,
+    },
+    {
     },
   ];
 

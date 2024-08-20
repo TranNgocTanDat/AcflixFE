@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <>
       <Header></Header>
-      <body>
+      <div className="bodylogin">
         <div className="header-main">
           <h1>classNamey Login Form</h1>
           <div className="header-bottom">
@@ -49,7 +49,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-      </body>
+      </div>
     </>
   );
 };
