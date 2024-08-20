@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <Intro />
-      <div className="slide">
+      <div className="slide top10">
         <div className="slide-title">Danh sách top 10</div>
         <SliderHome dataFilm={dataFilm} error={error} />
       </div>

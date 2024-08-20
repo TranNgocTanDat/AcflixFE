@@ -2,10 +2,12 @@
   width: 100%;
   height: auto;
 }
+.container .top10 {
+  margin-top: -250px;
+}
 .container .slide {
   margin-left: 50px;
-  margin-top: -250px;
-  margin-bottom: 285px;
+  margin-bottom: 30px;
 }
 .container .slide .slide-title {
   position: relative;
