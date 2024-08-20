@@ -5,41 +5,45 @@ import { FaPlay } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import "./style.css";
 import { Link } from "react-router-dom";
-import Search from "../search/Search";
+
+const getRandomItem = (arr: Film[]): Film => {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+};
 
 const Intro = () => {
   const { dataFilm, error } = useDatas();
+
+  // Chọn một mục ngẫu nhiên từ danh sách dữ liệu
+  const randomFilm = dataFilm.length > 0 ? getRandomItem(dataFilm) : null;
 
   return (
     <>
       <div>
         {error && <p>{error}</p>}
-        {dataFilm.map((film: Film) => (
-          <div key={film.id} className="info">
+        {randomFilm && (
+          <div key={randomFilm.id} className="info">
             <div className="poster">
-              {film.poster.length > 0 && (
+              {randomFilm.cover.length > 0 && (
                 <div className="img-wrapper">
                   <img
-                    src="https://rotoscopers.com/wp-content/uploads/2015/04/Spider-Man.jpeg"
+                    src={randomFilm.cover[0].url}
                     alt=""
                     className="img-poster"
                   />
                 </div>
-                // <ReactPlayer
-                //   url={film.poster[0].url} // Lấy URL từ poster
-                //   controls={true}
-                //   width="100%"
-                //   height="700px"
-                // />
               )}
               <div className="overlay">
                 <div className="introInfo">
-                  <h1>{film.name}</h1>
-                  <p>{film.description}</p>
+                  <h1>{randomFilm.name}</h1>
+                  <p>{randomFilm.description}</p>
                 </div>
                 <div className="intro-bottom">
                   <div className="bottom-play">
-                    <Link to={`/detail/${film.id}`} className="bottom-detail">
+                    <Link
+                      to={`/detail/${randomFilm.id}`}
+                      className="bottom-detail"
+                    >
                       <button>
                         <FaPlay className="icon" />
                         Phát
@@ -53,13 +57,13 @@ const Intro = () => {
                     </button>
                   </div>
                   <div className="bottom-restriction">
-                    <p>{film.restriction}+</p>
+                    <p>{randomFilm.restriction}+</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        ))}
+        )}
       </div>
     </>
   );

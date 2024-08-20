@@ -2,10 +2,12 @@
     width: 100%;
     height: auto;
 
+    .top10{
+        margin-top: -250px;
+    }
     .slide {
         margin-left: 50px;
-        margin-top: -250px;
-        margin-bottom: 285px;
+        margin-bottom: 30px;
         .slide-title {
             position: relative;
             z-index: 10000;
