@@ -1,6 +1,5 @@
 import {  useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +11,7 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   useEffect(() => {
-    if (searchTerm.trim()) {
+    if (searchTerm.trim() === "") {
       // Điều hướng đến trang kết quả mỗi khi giá trị tìm kiếm thay đổi
       navigate(`/result?query=${searchTerm}`);
     }
@@ -31,7 +30,7 @@ const Search = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           ref={inputRef}
         />
-        <FaSearch className="iconSearch" onClick={() => navigate(`/result?query=${searchTerm}`)} />
+        <FaSearch className="iconSearch" />
       </div>
     </div>
       

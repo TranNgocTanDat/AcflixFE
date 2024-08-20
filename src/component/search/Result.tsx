@@ -3,31 +3,39 @@ import { useLocation } from "react-router-dom";
 import useDatas from "../../api/useData";
 import { Film } from "../../api/fake-api";
 import FilmItem from "../FilmItem";
+import "./style.css";
+
+// Hàm chuẩn hóa chuỗi để loại bỏ dấu
+const normalizeString = (str: string): string => {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Loại bỏ dấu
+};
 
 const Result: React.FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const query = queryParams.get("query") || "";
 
-  const { dataFilm} = useDatas();
+  const { dataFilm } = useDatas();
   const [searchResult, setSearchResult] = useState<Film[]>([]);
 
   useEffect(() => {
     if (query.trim() !== "") {
+      const normalizedQuery = normalizeString(query).toLowerCase();
       const result = dataFilm.filter((film) =>
-        film.name.toLowerCase().includes(query.toLowerCase())
+        normalizeString(film.name).toLowerCase().includes(normalizedQuery)
       );
       setSearchResult(result);
     }
   }, [query, dataFilm]);
 
-  // Ở đây bạn có thể sử dụng query để tìm kiếm dữ liệu hoặc hiển thị kết quả tương ứng
   return (
-    <div className="search-results">
+    <div className="result">
       {searchResult.length > 0 ? (
         <div className="result-search">
           {searchResult.map((film) => (
-            <FilmItem data={film} key={film.id} />
+            <div className="result-item">
+              <FilmItem data={film} key={film.id} />
+            </div>
           ))}
         </div>
       ) : (
@@ -38,3 +46,4 @@ const Result: React.FC = () => {
 };
 
 export default Result;
+
