@@ -46,4 +46,7 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+.result .result-search .result-item .result-item > .box {
+  margin: none;
 }/*# sourceMappingURL=style.css.map */

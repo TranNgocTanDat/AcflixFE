@@ -38,7 +38,6 @@ export interface Film {
 
 const getDataApi = async (): Promise<Film[]> => {
     const responseApi = await fetch("http://192.168.88.175:8080/api/browse/films/new-released");
-    // const responseApi = await fetch("http://127.0.0.1:3658/m1/619294-586489-default/films");
     const data = await responseApi.json();
     return data.items as Film[];
 }
