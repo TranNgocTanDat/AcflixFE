@@ -8,7 +8,7 @@ import FilmItem from "../FilmItem";
 
 export interface SliderProps {
   dataFilm: Film[];
-  error: string | null;
+
 }
 
 const SampleNextArrow = (props: any) => {
@@ -33,7 +33,7 @@ const SamplePrevArrow = (props: any) => {
   );
 };
 
-const SliderHome: React.FC<SliderProps> = ({ dataFilm, error }) => {
+const SliderHome: React.FC<SliderProps> = ({ dataFilm }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -48,26 +48,9 @@ const SliderHome: React.FC<SliderProps> = ({ dataFilm, error }) => {
     <div className="slider">
       <div className="slider-content">
         <Slider {...settings}>
-          {error && <p>{error}</p>}
           {dataFilm.map((film) => (
-            <FilmItem data={film}/>
+            <FilmItem data={film} />
           ))}
-          {dataFilm.map((film) => (
-            <FilmItem data={film}/>
-          ))}
-          {dataFilm.map((film) => (
-            <FilmItem data={film}/>
-          ))}
-          {dataFilm.map((film) => (
-            <FilmItem data={film}/>
-          ))}
-          {dataFilm.map((film) => (
-            <FilmItem data={film}/>
-          ))}
-          {dataFilm.map((film) => (
-            <FilmItem data={film}/>
-          ))}
-          
         </Slider>
       </div>
     </div>
