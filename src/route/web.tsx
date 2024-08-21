@@ -11,10 +11,9 @@ import React from "react";
 import HomePage from "../pages/HomePage/HomePage.tsx";
 import Result from "../component/search/Result.tsx";
 import Login from "../pages/Login/Login.tsx";
-
+import Register from "../pages/Register/Register.tsx";
 
 const AppRouter: React.FC = () => {
-
   const userRouters: RouteObject[] = [
     {
       path: "/",
@@ -24,7 +23,6 @@ const AppRouter: React.FC = () => {
       path: "/result",
       element: <Result />,
     },
-      
   ];
 
   const router = createBrowserRouter([
@@ -44,6 +42,10 @@ const AppRouter: React.FC = () => {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
     },
   ]);
 

@@ -2,13 +2,13 @@ import { NavLink } from "react-router-dom";
 import Header from "../../Layout/Header/Header";
 import "./style.scss";
 
-const Login = () => {
+const Register = () => {
   return (
     <>
       <div className="bodylogin">
         <Header></Header>
         <div className="header-main">
-          <h1>Đăng Nhập</h1>
+          <h1>Đăng Ký</h1>
           <div className="header-bottom">
             <div className="header-right w3agile">
               <div className="header-left-bottom agileinfo">
@@ -19,7 +19,12 @@ const Login = () => {
                     placeholder="Mật khẩu"
                     name="password"
                   />
-                  <div className="remember">
+                  <input
+                    type="password"
+                    placeholder="Xác nhận mật khẩu"
+                    name="password"
+                  />
+                  {/* <div className="remember">
                     <label className="checkbox">
                       <input type="checkbox" name="" />
                       Ghi nhớ tôi
@@ -30,18 +35,18 @@ const Login = () => {
                       </h6>
                     </div>
                     <div className="clear"> </div>
-                  </div>
+                  </div> */}
 
                   {/* <input type="submit" value="Login" /> */}
                   <div className="button-login">
-                    <NavLink to={"/register"}>
-                      <button type="submit">Đăng Ký</button>
+                    <NavLink to={"/login"}>
+                      <button type="submit">Đăng Nhập</button>
                     </NavLink>
-                    <button type="submit">Đăng Nhập</button>
+                    <button type="submit">Đăng Ký</button>
                   </div>
                 </form>
                 <div className="header-left-top">
-                  <div className="sign-up">Bạn có thể đăng nhập bằng</div>
+                  <div className="sign-up">Bạn có thể đăng ký bằng</div>
                 </div>
                 <div className="header-social wthree">
                   <a href="#" className="face">
@@ -60,4 +65,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
