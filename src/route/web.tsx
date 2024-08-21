@@ -24,8 +24,7 @@ const AppRouter: React.FC = () => {
       path: "/result",
       element: <Result />,
     },
-    {
-    },
+      
   ];
 
   const router = createBrowserRouter([

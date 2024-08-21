@@ -11,7 +11,7 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   useEffect(() => {
-    if (searchTerm.trim() === "") {
+    if (searchTerm.trim() !== "") {
       // Điều hướng đến trang kết quả mỗi khi giá trị tìm kiếm thay đổi
       navigate(`/result?query=${searchTerm}`);
     }
