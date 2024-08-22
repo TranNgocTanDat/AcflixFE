@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig } from "axios";
 
 //@ts-ignore
 // const DOMAIN = "https://api.muemp3.site";
-const DOMAIN = "http://192.168.88.175:8080/api";
+const DOMAIN = "http://192.168.12.93:8080/api";
 
 const request = axios.create({
   proxy: false,
