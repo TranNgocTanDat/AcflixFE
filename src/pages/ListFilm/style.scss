@@ -1,89 +1,84 @@
-.list-film {
+.list-film{
     display: flex;
-    .list-title {
-        margin-left: 20px;
-        font-size: 30px;
-        padding-bottom: 20px;
-    }
-
-    .sort-options {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    text-align: center;
+    .sort-options{
+        font-size: 18px;
         position: absolute;
-        right: 2%;
-
-        label {
-            font-size: 20px;
+        right: 5%;
+        
+        label{
+            margin-right: 10px;
         }
-        select {
-            padding: 5px;
+
+        select{
+            width: 100px;
+            height: 30px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            
-            
+            padding: 5px;
         }
     }
 }
-.list {
+.list-title {
+    margin-left: 20px;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+.list{
     width: 100%;
-    .list-item {
+    .list-item{
         width: 100%;
-        .list-item{
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            .film-item{
-                width: 20%;
-                flex: 0 0 calc(20% - 10px);
-                box-sizing: border-box;
-                height: auto;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                margin: 10px;
-            }
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        .film-item{
+            width: 20%;
+
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 10px;
         }
     }
 }
+
 
 .pagination {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    .button-set-page{
-        width: 120px;
-        height: 40px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: none;
-        background-color: rgb(64, 63, 63);
-        color: white;
-        &:last-child{
-            margin-left: 10px;
-        }
-        &:hover{
-            cursor: pointer;
-            color: #dddddd;
-        }
-    }
-
-    .button-page {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: none;
-        background-color: rgb(64, 63, 63);
-        color: white;
+display: flex;
+justify-content: center;
+margin: 20px 0;
+.button-set-page{
+    width: 120px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(64, 63, 63);
+    color: white;
+    &:last-child{
         margin-left: 10px;
-        &:hover{
-            cursor: pointer;
-            color: #ddd;
-        }
     }
+    &:hover{
+        cursor: pointer;
+        color: #dddddd;
+    }
+}
 
-    
+.button-page {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(64, 63, 63);
+    color: white;
+    margin-left: 10px;
+    &:hover{
+        cursor: pointer;
+        color: #ddd;
+    }
+}
+
+
 }
