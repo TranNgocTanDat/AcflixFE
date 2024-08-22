@@ -14,6 +14,8 @@ const Search = () => {
     if (searchTerm.trim() !== "") {
       // Điều hướng đến trang kết quả mỗi khi giá trị tìm kiếm thay đổi
       navigate(`/result?query=${searchTerm}`);
+    } else{
+      navigate(`/`)
     }
   }, [searchTerm, navigate]);
 
