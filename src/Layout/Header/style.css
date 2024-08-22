@@ -34,10 +34,19 @@
 }
 .header .navlink .navlink__item:hover {
   background-color: #f1f1f1;
+  color: black;
+}
+
+.header .navlink .navlink__item:hover a{
+  color: black;
 }
 .header .navlink .navlink__item a {
   text-decoration: none;
   color: white;
+}
+.header .navlink .navlink__item a:hover {
+  /* background-color: #f1f1f1; */
+  color: black;
 }
 .header .navlink .navlink__item .genre {
   display: none;
@@ -65,8 +74,9 @@
   text-decoration: none;
   color: black;
 }
-.header .navlink .navlink__item .genre table td a:hover {
-  color: #f1f1f1;
+.header .navlink .navlink__item .genre table td:hover {
+  background-color: #f1f1f1;
+  border-radius: 5px;
 }
 .header .navlink .navlink__item:hover .genre {
   display: block;

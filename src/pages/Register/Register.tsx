@@ -13,7 +13,7 @@ const Register = () => {
             <div className="header-right w3agile">
               <div className="header-left-bottom agileinfo">
                 <form action="#" method="post">
-                  <input type="text" placeholder="Tên tài khoản" name="name" />
+                  <input type="email" placeholder="Email" name="email" />
                   <input
                     type="password"
                     placeholder="Mật khẩu"
