@@ -44,6 +44,24 @@
             transition: opacity 0.3s ease;
         }
 
+        .status{
+            width: 120px;
+            height: 30px;
+            background-color: rgb(152, 2, 2);
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 14px;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+            border-radius: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
         &:hover .image {
             transform: scale(1.1); // Phóng to ảnh
             filter: blur(2px); // Làm mờ ảnh
@@ -59,7 +77,7 @@
         .date {
             color: white;
             z-index: 2;
-            font-size: 14px;
+            font-size: 16px;
             text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
             white-space: nowrap;
             overflow: hidden;

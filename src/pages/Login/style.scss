@@ -197,14 +197,7 @@ i {
 	font: inherit;
 	vertical-align: baseline;
 }
-dl {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
+
 
 nav {
 	ul {
@@ -426,6 +419,18 @@ span.hed-white {
 		width: 87%;
 		margin: 0 0 20px;
 		display: inline-block;
+	}input[type="email"] {
+		background: url(../images/m.png)no-repeat 0px 5px;
+		outline: none;
+		font-size: 15px;
+		font-weight: 400;
+		color: #fff;
+		padding: 12px 13px 20px 44px;
+		border: none;
+		border-bottom: 1px solid #fff;
+		width: 87%;
+		margin: 0 0 20px;
+		display: inline-block;
 	}
 	input[type="password"] {
 		background: url(../images/l.png)no-repeat 0px 5px;
@@ -592,6 +597,18 @@ span.sin-color {
 		background: url(../images/user.png)no-repeat 10px 9px #FBFBFB;
 		display: block;
 	}
+	input[type="email"] {
+		outline: none;
+		font-size: 17px;
+		font-weight: 400;
+		color: #000;
+		padding: 10px 10px 10px 40px;
+		border: 1px solid #A59DA1;
+		margin: 0px 0px 15px 0px;
+		width: 78%;
+		-webkit-appearance: none;
+		background: #eeeeee;
+	}
 	input[type="password"] {
 		outline: none;
 		font-size: 17px;
@@ -611,6 +628,16 @@ span.sin-color {
 	float: left;
 	width: 31%;
 	input[type="text"] {
+		outline: none;
+		font-size: 15px;
+		color: #000;
+		padding: 10px 10px 10px 40px;
+		border: 1px solid #A59DA1;
+		width: 78%;
+		-webkit-appearance: none;
+		font-family: 'Roboto Condensed', sans-serif;
+	}
+	input[type="email"] {
 		outline: none;
 		font-size: 15px;
 		color: #000;

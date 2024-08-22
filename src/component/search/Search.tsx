@@ -14,6 +14,8 @@ const Search = () => {
     if (searchTerm.trim() !== "") {
       // Điều hướng đến trang kết quả mỗi khi giá trị tìm kiếm thay đổi
       navigate(`/result?query=${searchTerm}`);
+    } else{
+      navigate(`/`)
     }
   }, [searchTerm, navigate]);
 
@@ -24,7 +26,7 @@ const Search = () => {
           <input
             type="text"
             className="search-input"
-            placeholder="Tìm kiếm trò chơi..."
+            placeholder="Tìm kiếm bộ phim..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             ref={inputRef}
