@@ -1,11 +1,35 @@
 .list-film {
+    display: flex;
     .list-title {
         margin-left: 20px;
         font-size: 30px;
         padding-bottom: 20px;
     }
-    .list{
+
+    .sort-options {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        right: 2%;
+
+        label {
+            font-size: 20px;
+        }
+        select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            
+            
+        }
+    }
+}
+.list {
+    width: 100%;
+    .list-item {
         width: 100%;
+
         .list-item{
             width: 100%;
             display: flex;
@@ -22,12 +46,15 @@
                 border-radius: 4px;
                 margin: 10px;
             }
+
         }
     }
 }
 
 .pagination {
     display: flex;
+
+
     justify-content: center;
     margin: 20px 0;
     .button-set-page{
@@ -64,3 +91,4 @@
 
     
 }
+
