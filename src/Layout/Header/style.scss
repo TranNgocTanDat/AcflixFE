@@ -22,11 +22,10 @@
     text-align: right;
     height: auto;
 
-    img{
+    img {
       width: auto;
       height: 56px;
     }
-
   }
 
   .navlink {
@@ -62,11 +61,9 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
 
-
         table {
           width: 100%;
           border-collapse: collapse;
-
 
           tr,
           td {
@@ -79,10 +76,24 @@
             a {
               text-decoration: none;
               color: black;
+              font-size: 12px;
             }
 
             a:hover {
               color: #f1f1f1;
+            }
+          }
+          tbody {
+            display: flex;
+            flex-wrap: wrap;
+
+            tr {
+              width: 100%;
+            }
+
+            td {
+              flex: 1 0 25%; // Mỗi cột chiếm 25% chiều rộng (4 cột)
+              max-width: 20%;
             }
           }
         }
@@ -100,7 +111,5 @@
     align-items: center;
     justify-content: flex-end;
     margin-right: 50px;
-
-    
   }
 }

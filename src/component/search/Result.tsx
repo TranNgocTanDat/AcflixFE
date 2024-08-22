@@ -18,7 +18,7 @@ const Result: React.FC = () => {
   const [searchResult, setSearchResult] = useState<Film[]>([]);
 
   useEffect(() => {
-    searchFilm(query).then((response) => {
+    searchFilm(query, 10, 0, "").then((response) => {
       setSearchResult(response.items);
     });
   }, [query]);
