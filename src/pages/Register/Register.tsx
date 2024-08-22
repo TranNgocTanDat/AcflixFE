@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <>
       <div className="bodylogin">
-        <Header></Header>
+        <Header />
         <div className="header-main">
           <h1>Đăng Ký</h1>
           <div className="header-bottom">
