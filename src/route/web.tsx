@@ -12,7 +12,8 @@ import HomePage from "../pages/HomePage/HomePage.tsx";
 import Result from "../component/search/Result.tsx";
 import Login from "../pages/Login/Login.tsx";
 import Register from "../pages/Register/Register.tsx";
-
+import FilmDetailsPage from "../pages/FilmDetailsPage/FilmDetailsPage.tsx"; // Import trang chi tiết phim
+import WatchPage from "../pages/WatchPage/WatchPage.tsx"; // Import trang xem phim
 const AppRouter: React.FC = () => {
   const userRouters: RouteObject[] = [
     {
@@ -22,6 +23,14 @@ const AppRouter: React.FC = () => {
     {
       path: "/result",
       element: <Result />,
+    },
+    {
+      path: "/film/:id",
+      element: <FilmDetailsPage />,
+    },
+    {
+      path: "/watch/:id/:episode?",
+      element: <WatchPage />,
     },
   ];
 

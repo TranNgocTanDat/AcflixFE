@@ -1,0 +1,91 @@
+.watch-page {
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+.watch-page .video-player {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.watch-page .video-player video {
+  width: 100%;
+  height: auto;
+  border: 1px solid #333;
+  background: black;
+}
+.watch-page .episode-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.watch-page .episode-navigation button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.watch-page .episode-navigation button:hover {
+  background-color: #444;
+}
+.watch-page .episode-navigation button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+.watch-page .episode-selection {
+  margin-top: 20px;
+}
+.watch-page .episode-selection h3 {
+  margin-bottom: 10px;
+}
+.watch-page .episode-selection .episodes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.watch-page .episode-selection .episodes-list button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  min-width: 80px;
+}
+.watch-page .episode-selection .episodes-list button:hover {
+  background-color: #444;
+}
+.watch-page .episode-selection .episodes-list button.active {
+  background-color: #ffae00;
+}
+.watch-page .film-info {
+  margin-top: 30px;
+}
+.watch-page .film-info h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.watch-page .film-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+}
+.watch-page .film-reviews {
+  margin-top: 40px;
+}
+.watch-page .film-reviews h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.watch-page .film-reviews .reviews-content {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+}
+.watch-page .film-reviews .reviews-content p {
+  font-size: 16px;
+  color: #ddd;
+}
+
+/*# sourceMappingURL=style.css.map */
