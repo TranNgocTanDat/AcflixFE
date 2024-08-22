@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import "./style.scss";
 import { Film } from "../../api/fake-api";
@@ -10,16 +10,21 @@ import { useParams } from "react-router-dom";
 import { Page } from "../../model/Page";
 
 const ListFilm = () => {
+  const [limit] = useState(12);
+
   // const [newReleased, setNewReleased] = useState<Film[]>([]);
   const [listFilms, setListFilms] = useState<Page<Film>>({
-    items: [],
-  });
+    totalItems: 0,
+    limit: limit,
+    isFirst: true,
+    islLast: true,
+    items: [] as Film[],
+    offset: 0,
+  } as Page<Film>);
   const [loading, setLoading] = useState(true);
   const { categoryId } = useParams<{ categoryId: string }>();
   const [page, setPage] = useState(1);
-  const [limit] = useState(10);
-  const [totalPages, setTotalPages] = useState<number>(0);
-  const [pageRange, setPageRange] = useState<number[]>([]);
+  const [totalPages, setTotalPages] = useState<number[]>([]);
 
   useEffect(() => {
     const fetchFilm = async () => {
@@ -28,16 +33,13 @@ const ListFilm = () => {
         const offset = (page - 1) * limit;
         const data = await findFilmByCate(categoryId, limit, offset, ""); // Gọi API với categoryId
         setListFilms(data);
-        const pages = Math.ceil(data.total / limit);
-        setTotalPages(pages);
-        // Tính toán danh sách các trang hiển thị
-        const range = [];
-        const start = Math.max(1, page - 2);
-        const end = Math.min(pages, page + 2);
-        for (let i = start; i <= end; i++) {
-          range.push(i);
+        const pages = Math.ceil(data.totalItems / limit);
+
+        const temp: number[] = [];
+        for (let i = 1; i <= pages; i++) {
+          temp.push(i);
         }
-        setPageRange(range);
+        setTotalPages(temp);
       } catch (error) {
         console.error("Error fetching category films:", error);
       } finally {
@@ -45,20 +47,12 @@ const ListFilm = () => {
       }
     };
     fetchFilm(); //Gọi hàm lấy dữ liệu.
-  }, [categoryId, page]);
-
-  if (loading) return <div>Đang tải...</div>;
-
-  //
+  }, [categoryId, limit, page]);
 
   const handlePageChange = (pageNumber: number) => {
     setPage(pageNumber);
   };
-
-  // const pageNumbers = [];
-  // for (let i = 1; i <= totalPages; i++) {
-  //   pageNumbers.push(i);
-  // }
+  if (loading) return <div>Đang tải...</div>;
 
   return (
     <>
@@ -85,21 +79,23 @@ const ListFilm = () => {
         <button
           onClick={() => handlePageChange(page - 1)}
           disabled={page === 1}
+          className="button-set-page"
         >
           Trang trước
         </button>
-        {pageRange.map((pageNumber) => (
+        {totalPages.map((page) => (
           <button
-            key={pageNumber}
-            onClick={() => handlePageChange(pageNumber)}
-            className={pageNumber === page ? "active" : ""}
+            key={page}
+            onClick={() => handlePageChange(page)}
+            className="button-page"
           >
-            {pageNumber}
+            {page}
           </button>
         ))}
         <button
           onClick={() => handlePageChange(page + 1)}
-          disabled={page === totalPages}
+          // disabled={page === totalPages}
+          className="button-set-page"
         >
           Trang sau
         </button>
