@@ -1,5 +1,5 @@
 
-import { Film } from "../../api/fake-api";
+
 import useDatas from "../../api/useData";
 
 import { FaPlay } from "react-icons/fa";
@@ -44,7 +44,7 @@ const Intro = () => {
 
       <>
         <div>
-          {error && <p>{error}</p>}
+
           {randomFilm && (
               <div key={randomFilm.id} className="info">
                 <div className="poster">
