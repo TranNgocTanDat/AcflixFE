@@ -32,12 +32,14 @@ const Navbar = () => {
           <li className="navlink__item">
             <Link to="/">Trang chủ</Link>
           </li>
+
           {listcate.slice(0, 2).map((c) => (
             <li className="navlink__item">
               <Link to={"/category/" + c.id}>{c.name}</Link>
             </li>
           ))}
           {/* <li className="navlink__item">
+
             <Link to="/user">Phim Lẻ</Link>
           </li>
           <li className="navlink__item">

@@ -9,5 +9,4 @@ export interface Page<T> {
     limit: number;
     pageSize: number;
 
-    
 }

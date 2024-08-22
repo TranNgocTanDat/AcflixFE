@@ -1,3 +1,4 @@
+
 import Category from "../model/Category";
 import CategoryDetails from "../model/CategoryDetails";
 import { Film } from "../model/Film";
@@ -14,5 +15,6 @@ export const findCategory = async (limit: number, offset = 0, sort = 0) => {
 
 export const findFilmByCate = async (id: string, limit: number, offset: number, sort ="") => {
   return await api.get<Page<Film>>(`/categories/${id}/films`, { params: { limit, offset, sort } });
+
 }
 

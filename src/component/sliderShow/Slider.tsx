@@ -50,6 +50,7 @@ const SliderHome: React.FC<SliderProps> = ({ dataFilm }) => {
         <Slider {...settings}>
           {dataFilm.map((film) => (
             <FilmItem data={film} />
+            
           ))}
         </Slider>
       </div>

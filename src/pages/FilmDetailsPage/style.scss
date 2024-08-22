@@ -1,0 +1,274 @@
+.film-details {
+  padding: 60px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+
+  .container {
+    backdrop-filter: blur(10px); // Làm mờ nền phía sau nội dung
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); // Tạo lớp nền đen mờ cho nội dung
+
+    .film__details__content {
+      display: flex;
+      flex-direction: column;
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .col-lg-3, .col-lg-6, .col-lg-12 {
+          margin-bottom: 30px;
+        }
+
+        .col-lg-3 {
+          flex: 0 0 20%;
+          max-width: 20%;
+          margin-right: 20px; // Tạo khoảng cách 20px với phần thông tin
+
+          .film__poster {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          }
+        }
+
+        .col-lg-6 {
+          flex: 0 0 55%; // Điều chỉnh để phù hợp với kích thước poster mới và khoảng cách
+          max-width: 55%;
+
+          .film__details__text {
+            .film__details__title {
+              h3 {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 15px;
+              }
+              span {
+                font-size: 20px;
+                color: #ccc;
+              }
+            }
+
+            .film__details__rating {
+              display: flex;
+              align-items: center;
+              margin: 20px 0;
+
+              .rating {
+                a {
+                  color: #f39c12;
+                  font-size: 20px;
+                  margin-right: 5px;
+                }
+              }
+              span {
+                margin-left: 10px;
+                font-size: 18px;
+              }
+            }
+
+            p {
+              font-size: 18px;
+              line-height: 1.8;
+              color: #ddd;
+              margin-bottom: 30px;
+            }
+
+            .film__details__widget {
+              .row {
+                display: flex;
+                flex-wrap: wrap;
+
+                .col-lg-6, .col-md-6 {
+                  flex: 0 0 50%;
+                  max-width: 50%;
+                  padding: 0 15px; // Khoảng cách giữa các cột
+
+                  ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 10px 0;
+                      font-size: 18px;
+                      color: #ddd;
+                      border-bottom: 1px solid #555;
+
+                      span {
+                        font-weight: bold;
+                        min-width: 120px;
+                        font-size: 18px;
+                        display: inline-block;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .film__details__btn {
+              margin-top: 40px;
+
+              .watch-btn {
+                display: inline-block;
+                padding: 15px 30px;
+                font-size: 18px;
+                border-radius: 50px; // Bo tròn nút
+                background-color: #ff7f50; // Màu cam
+                color: white; // Chữ màu trắng
+                text-align: center;
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                  background-color: #e04c2f; // Màu đỏ khi hover
+                }
+
+                &:focus {
+                  outline: none;
+                }
+
+                i {
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+        }
+
+        .col-lg-12 {
+          flex: 0 0 100%;
+          max-width: 100%;
+
+          .film__details__review,
+          .film__details__form {
+            width: 100%;
+            margin-top: 20px;
+
+            .section-title {
+              margin-bottom: 20px;
+              h5 {
+                font-size: 20px;
+                font-weight: bold;
+                position: relative;
+
+                &:after {
+                  content: '';
+                  width: 50px;
+                  height: 2px;
+                  background-color: #ff5e3a;
+                  position: absolute;
+                  bottom: -5px;
+                  left: 0;
+                }
+              }
+            }
+
+            .reviews-content {
+              background-color: #333;
+              padding: 20px;
+              border-radius: 5px;
+              p {
+                font-size: 16px;
+                color: #ddd;
+              }
+            }
+
+            textarea {
+              width: 100%;
+              padding: 15px;
+              border-radius: 5px;
+              border: 1px solid #ddd;
+              resize: none;
+              margin-bottom: 10px;
+            }
+
+            button {
+              background-color: #ff7f50;
+              color: white;
+              border: none;
+              padding: 10px 20px;
+              border-radius: 50px; // Bo tròn nút
+              cursor: pointer;
+              text-transform: uppercase;
+
+              &:hover {
+                background-color: #e04c2f;
+              }
+
+              i {
+                margin-left: 5px;
+              }
+            }
+          }
+
+          .film__details__sidebar {
+            .section-title {
+              margin-bottom: 20px;
+
+              h5 {
+                font-size: 20px;
+                font-weight: bold;
+                position: relative;
+
+                &:after {
+                  content: '';
+                  width: 50px;
+                  height: 2px;
+                  background-color: #ff5e3a;
+                  position: absolute;
+                  bottom: -5px;
+                  left: 0;
+                }
+              }
+            }
+
+            .related-films {
+              display: flex;
+              flex-direction: column;
+
+              .related-film-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                text-decoration: none;
+                color: #ddd;
+
+                img {
+                  width: 100%;  // Chiếm toàn bộ chiều rộng của thẻ cha
+                  height: 150px; // Chiều cao cố định cho tất cả các poster
+                  max-width: 150px; // Đảm bảo kích thước không vượt quá giới hạn
+                  border-radius: 5px;
+                  margin-right: 15px;
+                  object-fit: cover; // Đảm bảo hình ảnh được căn chỉnh để vừa khít trong khung
+                  object-position: center;
+                  flex-shrink: 0;
+                }
+
+                h6 {
+                  font-size: 16px;
+                  margin: 0;
+                  flex-shrink: 1;
+                }
+
+                &:hover {
+                  color: #ff7f50; // Đổi màu chữ khi hover
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

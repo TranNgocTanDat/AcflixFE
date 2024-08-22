@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ const Search = () => {
   // Store value search and result search
   const [searchTerm, setSearchTerm] = useState<string>("");
 
+
   useEffect(() => {
     if (searchTerm.trim() !== "") {
       // Điều hướng đến trang kết quả mỗi khi giá trị tìm kiếm thay đổi
@@ -19,9 +20,10 @@ const Search = () => {
     }
   }, [searchTerm, navigate]);
 
+
   return (
     <>
-      <div className="search-container">
+      <form className="search-container" onSubmit={handleSubmit}>
         <div className="search-box f_flex">
           <input
             type="text"
@@ -31,9 +33,11 @@ const Search = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             ref={inputRef}
           />
-          <FaSearch className="iconSearch" />
+          <button type="submit" className="search-button">
+            <FaSearch className="iconSearch" />
+          </button>
         </div>
-      </div>
+      </form>
     </>
   );
 };

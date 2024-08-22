@@ -13,7 +13,7 @@ const FimItem = (props: FilmItemProps) => {
   const { data } = props;
   return (
     <div key={data.id} className="box">
-      <Link to = {`/product/${data.id}`}>
+      <Link to = {`/film/${data.id}`}>
       <div className="box-poster">
         <img className="image" src={data.poster[0].url} alt={data.name} />
         <FaPlay className="icon-play" />

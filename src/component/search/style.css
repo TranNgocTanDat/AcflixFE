@@ -1,11 +1,15 @@
-.search-box {
+.search-container {
+  width: 100%;
+  background-color: none;
+}
+.search-container .search-box {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   position: relative;
 }
-.search-box .search-input {
+.search-container .search-box .search-input {
   font-size: 14px;
   border: 1px solid black;
   outline: none;
@@ -16,17 +20,21 @@
   display: none;
   transition: width 0.3s ease, opacity 0.3s ease;
 }
-.search-box .iconSearch {
+.search-container .search-box .iconSearch {
   font-size: 24px;
   margin: 0 10px;
   cursor: pointer;
   color: white;
   transition: color 0.3s;
 }
-.search-box:hover .search-input {
+.search-container .search-box:hover .search-input {
   width: 200px;
   display: block;
   padding: 8px 12px;
+}
+.search-container .search-box .search-button {
+  background-color: none;
+  border: none;
 }
 
 .result {
