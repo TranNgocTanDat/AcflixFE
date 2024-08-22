@@ -1,9 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ListFilm from "../../pages/ListFilm/ListFilm";
+import Category from "../../model/Category";
+import { findCategory } from "../../services/categoryApi";
 
 const Navbar = () => {
   const [MobileMenu, setMobileMenu] = useState(false);
+  const [listcate, setListCate] = useState<Category[]>([]);
+
+  useEffect(() => {
+    const fetchCate = async () => {
+      try {
+        const response = await findCategory(22, 0, 0); // Thay đổi các tham số limit, offset, sort nếu cần
+        setListCate(response.items); // Giả sử dữ liệu trả về có cấu trúc { data: { items: [...] } }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+    fetchCate();
+  }, []);
 
   return (
     <>
@@ -17,15 +32,19 @@ const Navbar = () => {
           <li className="navlink__item">
             <Link to="/">Trang chủ</Link>
           </li>
-          <li className="navlink__item">
-            <Link to="/category/:id/films">Phim T.hình</Link>
-          </li>
-          <li className="navlink__item">
+
+          {listcate.slice(0, 2).map((c) => (
+            <li className="navlink__item">
+              <Link to={"/category/" + c.id}>{c.name}</Link>
+            </li>
+          ))}
+          {/* <li className="navlink__item">
+
             <Link to="/user">Phim Lẻ</Link>
           </li>
           <li className="navlink__item">
             <Link to="/vendor">Phim bộ</Link>
-          </li>
+          </li> */}
           <li className="navlink__item genre__item">
             Thể loại
             <div className="genre">
