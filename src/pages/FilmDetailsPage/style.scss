@@ -19,7 +19,9 @@
         justify-content: space-between;
         flex-wrap: wrap;
 
-        .col-lg-3, .col-lg-6, .col-lg-12 {
+        .col-lg-3,
+        .col-lg-6,
+        .col-lg-12 {
           margin-bottom: 30px;
         }
 
@@ -55,18 +57,12 @@
 
             .film__details__rating {
               display: flex;
-              align-items: center;
+              flex-direction: column; // Điều chỉnh để các phần tử nằm dọc
+              align-items: flex-start; // Căn chỉnh các phần tử về phía trái
               margin: 20px 0;
 
-              .rating {
-                a {
-                  color: #f39c12;
-                  font-size: 20px;
-                  margin-right: 5px;
-                }
-              }
               span {
-                margin-left: 10px;
+                margin-bottom: 10px; // Thêm khoảng cách giữa các dòng
                 font-size: 18px;
               }
             }
@@ -83,7 +79,8 @@
                 display: flex;
                 flex-wrap: wrap;
 
-                .col-lg-6, .col-md-6 {
+                .col-lg-6,
+                .col-md-6 {
                   flex: 0 0 50%;
                   max-width: 50%;
                   padding: 0 15px;
