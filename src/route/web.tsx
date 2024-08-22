@@ -31,7 +31,7 @@ const AppRouter: React.FC = () => {
       element: <FilmDetailsPage />,
     },
     {
-      path: "/watch/:id/:episode?",
+      path: "/watch/:id",
       element: <WatchPage />,
     },
   ];
@@ -58,10 +58,10 @@ const AppRouter: React.FC = () => {
       path: "/register",
       element: <Register />,
     },
-    {
-      path: "/category/:id/films",
-      element: <ListFilm />,
-    },
+    // {
+    //   path: "/category/:id/films",
+    //   element: <ListFilm />,
+    // },
   ]);
 
   return <RouterProvider router={router} />;

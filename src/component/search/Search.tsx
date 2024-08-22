@@ -3,7 +3,6 @@ import { FaSearch } from "react-icons/fa";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 
-
 const Search = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate(); // Khởi tạo useNavigates
@@ -30,7 +29,7 @@ const Search = () => {
             ref={inputRef}
           />
           <button type="submit" className="search-button">
-            <FaSearch />
+            <FaSearch className="iconSearch" />
           </button>
         </div>
       </form>

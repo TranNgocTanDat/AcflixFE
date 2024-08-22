@@ -2,24 +2,40 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './style.scss';
 
-// Import dữ liệu giả hoặc từ API
-import { FAKE_FILM_LIST, Film } from "../../api/fake-api";
+// Import dữ liệu giả hoặc từ API   
+import { findFilm, getStreamLink } from '../../services/filmApi';
+import VideoPlayer from './VideoPlayer';
+import { Film } from '../../model/Film';
 
 const WatchPage: React.FC = () => {
     const { id, episode } = useParams<{ id: string, episode?: string }>(); // Nhận id phim và số tập từ URL
     const [film, setFilm] = useState<Film | null>(null);
     const [currentEpisode, setCurrentEpisode] = useState<number>(1);
+    const [url, setUrl] = useState("")
     const navigate = useNavigate();
 
     useEffect(() => {
-        const foundFilm = FAKE_FILM_LIST.find(f => f.id === id);
+        const doWork = async () => {
+            if (!id){
+                
+                navigate('/notfound');
+                return;
+            }
+         const foundFilm = await findFilm(id);
         if (foundFilm) {
             setFilm(foundFilm);
-            if (episode) {
+            if (film?.type ==`series` && episode) {
                 setCurrentEpisode(parseInt(episode));
+            } else{
+                let url = await getStreamLink(id);
+                console.log(url);
+                
+                setUrl(url);
             }
         }
-    }, [id, episode]);
+        }
+        doWork();
+    }, [episode]);
 
     if (!film) {
         return <div>Film not found</div>;
@@ -40,12 +56,7 @@ const WatchPage: React.FC = () => {
     return (
         <div className="watch-page">
             <div className="video-player">
-                <video
-                    controls
-                    src={`path-to-your-video/${film.id}/episode-${currentEpisode}.mp4`}
-                >
-                    Your browser does not support the video tag.
-                </video>
+               <VideoPlayer src={url} />
             </div>
 
             {film.type === 'series' && (

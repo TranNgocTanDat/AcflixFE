@@ -19,7 +19,7 @@ export const filmHaveNewEpisodes = async () => {
 
 //get film by id
 export const findFilm = async(id: string) => {
-    return await api.get<Film>(`/film/${id}`, {params: {id}});
+    return await api.get<Film>(`/films/${id}`);
 }
 
 //get several film by id
@@ -59,5 +59,10 @@ export const getFilmVote = async(id: string) => {
 //get search film
 export const searchFilm = async (keyword: string, limit = 10, offset = 0, sort = "") => {
     return await api.get<Page<Film>>("/search/films", {params: {keyword, limit, offset, sort}});
+}
+
+//get stream link movie
+export const getStreamLink = async (id: string) => {
+    return await api.get<string>(`/films/movies/${id}/src`);
 }
 
