@@ -70,9 +70,21 @@
 .header .navlink .navlink__item .genre table td a {
   text-decoration: none;
   color: black;
+  font-size: 12px;
 }
 .header .navlink .navlink__item .genre table td a:hover {
   color: #f1f1f1;
+}
+.header .navlink .navlink__item .genre table tbody {
+  display: flex;
+  flex-wrap: wrap;
+}
+.header .navlink .navlink__item .genre table tbody tr {
+  width: 100%;
+}
+.header .navlink .navlink__item .genre table tbody td {
+  flex: 1 0 25%;
+  max-width: 20%;
 }
 .header .navlink .navlink__item:hover .genre {
   display: block;
