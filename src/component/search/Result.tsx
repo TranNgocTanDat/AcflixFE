@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import useDatas from "../../api/useData";
-import { Film } from "../../api/fake-api";
 import FilmItem from "../FilmItem";
 import "./style.css";
+import { searchFilm } from "../../services/filmApi";
+import { Film } from "../../model/Film";
 
 // Hàm chuẩn hóa chuỗi để loại bỏ dấu
 const normalizeString = (str: string): string => {
@@ -13,20 +13,15 @@ const normalizeString = (str: string): string => {
 const Result: React.FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const query = queryParams.get("query") || "";
+  const query = queryParams.get("keyword") || "";
 
-  const { dataFilm } = useDatas();
   const [searchResult, setSearchResult] = useState<Film[]>([]);
 
   useEffect(() => {
-    if (query.trim() !== "") {
-      const normalizedQuery = normalizeString(query).toLowerCase();
-      const result = dataFilm.filter((film) =>
-        normalizeString(film.name).toLowerCase().includes(normalizedQuery)
-      );
-      setSearchResult(result);
-    }
-  }, [query, dataFilm]);
+    searchFilm(query).then((response) => {
+      setSearchResult(response.items);
+    });
+  }, [query]);
 
   return (
     <div className="result">
@@ -46,4 +41,3 @@ const Result: React.FC = () => {
 };
 
 export default Result;
-

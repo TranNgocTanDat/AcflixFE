@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link to="/">Trang chủ</Link>
           </li>
           <li className="navlink__item">
-            <Link to="/listfilm">Phim T.hình</Link>
+            <Link to="/category/:id/films">Phim T.hình</Link>
           </li>
           <li className="navlink__item">
             <Link to="/user">Phim Lẻ</Link>
