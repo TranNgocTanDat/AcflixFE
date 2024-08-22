@@ -17,7 +17,7 @@ const FimItem = (props: FilmItemProps) => {
       <div className="box-poster">
         <img className="image" src={data.poster[0].url} alt={data.name} />
         <FaPlay className="icon-play" />
-        {/* <FaRegHeart className="icon-heart" /> */}
+        <FaRegHeart className="icon-heart" />
         <p className="status">{FilmStatus[data.status]}</p>
       </div>
       <div className="box-info">

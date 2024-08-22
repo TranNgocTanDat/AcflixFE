@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+
 import "./style.scss";
 import { Film } from "../../api/fake-api";
 import Header from "../../Layout/Header/Header";
