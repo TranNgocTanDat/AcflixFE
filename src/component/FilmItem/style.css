@@ -2,7 +2,7 @@
   position: relative;
   width: auto;
   height: auto;
-  margin-left: 16px;
+  /* margin-left: 16px; */
   overflow: hidden;
 }
 .box .box-poster {

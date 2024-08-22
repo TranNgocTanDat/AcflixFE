@@ -10,7 +10,6 @@ const Search = () => {
   // Store value search and result search
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-
   useEffect(() => {
     if (searchTerm.trim() !== "") {
       // Điều hướng đến trang kết quả mỗi khi giá trị tìm kiếm thay đổi
@@ -20,24 +19,23 @@ const Search = () => {
     }
   }, [searchTerm, navigate]);
 
-
   return (
     <>
-      <form className="search-container" onSubmit={handleSubmit}>
-        <div className="search-box f_flex">
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Tìm kiếm bộ phim..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            ref={inputRef}
-          />
-          <button type="submit" className="search-button">
-            <FaSearch className="iconSearch" />
-          </button>
-        </div>
-      </form>
+      {/* <form className="search-container" onSubmit={handleSubmit}> */}
+      <div className="search-box f_flex">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Tìm kiếm bộ phim..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          ref={inputRef}
+        />
+        <button type="submit" className="search-button">
+          <FaSearch className="iconSearch" />
+        </button>
+      </div>
+      {/* </form> */}
     </>
   );
 };

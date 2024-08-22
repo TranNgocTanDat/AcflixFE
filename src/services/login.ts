@@ -6,7 +6,7 @@ interface LoginResponse {
 
 const handleLogin = async (email: string, password: string): Promise<void> => {
   try {
-    const response = await axios.post<LoginResponse>('https://192.168.88.175:8080/login', {
+    const response = await axios.post<LoginResponse>('https://192.168.12.93:8080/login', {
       email,
       password,
     });

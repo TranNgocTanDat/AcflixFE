@@ -15,6 +15,7 @@ import Register from "../pages/Register/Register.tsx";
 
 import FilmDetailsPage from "../pages/FilmDetailsPage/FilmDetailsPage.tsx"; // Import trang chi tiết phim
 import WatchPage from "../pages/WatchPage/WatchPage.tsx"; // Import trang xem phim
+import ListFilm from "../pages/ListFilm/ListFilm.tsx";
 
 const AppRouter: React.FC = () => {
   const userRouters: RouteObject[] = [

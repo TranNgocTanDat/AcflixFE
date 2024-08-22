@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ListFilm from "../../pages/ListFilm/ListFilm";
+// import ListFilm from "../../pages/ListFilm/ListFilm";
 import Category from "../../model/Category";
 import { findCategory } from "../../services/categoryApi";
 
