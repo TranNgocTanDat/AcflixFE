@@ -9,6 +9,10 @@
   color: white;
   align-items: center;
   text-align: center;
+  background-color: transparent;
+}
+.header.active {
+  background-color: rgb(36, 36, 36);
 }
 .header .icon {
   font-size: 24px;

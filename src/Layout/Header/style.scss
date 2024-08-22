@@ -9,6 +9,11 @@
   color: white;
   align-items: center;
   text-align: center;
+  background-color: transparent;
+
+  &.active {
+    background-color: rgb(36, 36, 36); // Nền khi cuộn
+  }
 
   .icon {
     font-size: 24px;
