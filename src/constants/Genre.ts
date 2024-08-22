@@ -1,0 +1,22 @@
+export default {
+    "action" : "Hành Động",
+    "animation" : "Hoạt Hình",
+    "adventure" : "Phiêu Lưu",
+    "biography" : "Tiểu Sử",
+    "comedy": "Hài",
+    "crime":"Hình Sự",
+    "documentary":"Phim Tài Liệu",
+    "drama":"Drama",
+    "family":"Gia Đình",
+    "fantasy":"Tưởng Tượng",
+    "history":"Lịch Sử",
+    "horror":"kinh dị",
+    "musical":"Nhạc Kịch",
+    "mystery":"trinh thám",
+    "romance":"Lãng Mạn",
+    "scifi":"Khoa Học Viễn Tưởng",
+    "sport":"Thể Thao",
+    "thriller":"giật gân",
+    "war":"Chiến Tranh",
+    "western":"Miền Viễn Tây"
+}
