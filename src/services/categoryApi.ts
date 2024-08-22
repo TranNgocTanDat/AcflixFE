@@ -5,8 +5,8 @@ import { Film } from "../model/Film";
 import { Page } from "../model/Page";
 import api from "./api";
 
-export const findCategoryDetails = async (limit: number, offset = 0) => {
-  return await api.get<CategoryDetails[]>("/browse/categories", { params: { limit, offset } });
+export const findCategoryDetails = async (limit: number, offset = 0, filmLimit = 6) => {
+  return await api.get<CategoryDetails[]>("/browse/categories", { params: { limit, offset , filmLimit} });
 };
 
 export const findCategory = async (limit: number, offset = 0, sort = 0) => {

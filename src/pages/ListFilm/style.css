@@ -1,1 +1,56 @@
-/*# sourceMappingURL=style.css.map */
+.list-film {
+  display: flex;
+}
+.list-film .list-title {
+  margin-left: 20px;
+  font-size: 30px;
+}
+.list-film .sort-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  right: 2%;
+}
+.list-film .sort-options label {
+  font-size: 20px;
+}
+.list-film .sort-options select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.list {
+  width: 100%;
+}
+.list .list-item {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.list .list-item .film-item {
+  width: 20%;
+  flex: 0 0 calc(20% - 10px);
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+}
+
+.pagination button {
+  margin: 0 5px;
+}
+
+.pagination button.active {
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */
