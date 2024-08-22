@@ -6,7 +6,8 @@
   color: white;
 }
 .film-details .container {
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.6);
 }
@@ -206,6 +207,4 @@
 .film-details .container .film__details__content .row .col-lg-12 .film__details__review button i,
 .film-details .container .film__details__content .row .col-lg-12 .film__details__form button i {
   margin-left: 5px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
