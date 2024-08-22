@@ -13,7 +13,7 @@ const Search = () => {
   function handleSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     if (searchTerm.trim() === "") return;
-    navigate(`/search?query=${searchTerm}`);
+    navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
   }
 
   return (

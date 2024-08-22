@@ -5,8 +5,9 @@
 }
 .watch-page .video-player {
   width: 100%;
-  max-width: 800px;
+  max-width: 85%;
   margin: 0 auto;
+  position: relative;
 }
 .watch-page .video-player video {
   width: 100%;
@@ -14,49 +15,39 @@
   border: 1px solid #333;
   background: black;
 }
-.watch-page .episode-navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+.watch-page .video-player .hd {
+  position: absolute;
+  right: 14%;
+  top: 88%;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-align: center;
 }
-.watch-page .episode-navigation button {
+.watch-page .video-player .hd.active + .quality-btn {
+  display: block;
+}
+.watch-page .video-player .quality-btn {
+  display: none;
+  position: absolute;
+  right: 14%;
+  top: 83%;
+  cursor: pointer;
+  background: #444;
+  color: #fff;
+  border-radius: 4px;
+}
+.watch-page .video-player .quality-btn button {
   background-color: #333;
   color: #fff;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
   cursor: pointer;
+  margin: 5px 0;
 }
-.watch-page .episode-navigation button:hover {
+.watch-page .video-player .quality-btn button:hover {
   background-color: #444;
-}
-.watch-page .episode-navigation button:disabled {
-  background-color: #555;
-  cursor: not-allowed;
-}
-.watch-page .episode-selection {
-  margin-top: 20px;
-}
-.watch-page .episode-selection h3 {
-  margin-bottom: 10px;
-}
-.watch-page .episode-selection .episodes-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.watch-page .episode-selection .episodes-list button {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  min-width: 80px;
-}
-.watch-page .episode-selection .episodes-list button:hover {
-  background-color: #444;
-}
-.watch-page .episode-selection .episodes-list button.active {
-  background-color: #ffae00;
 }
 .watch-page .film-info {
   margin-top: 30px;

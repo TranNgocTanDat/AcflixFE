@@ -13,7 +13,7 @@ const normalizeString = (str: string): string => {
 const Result: React.FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const query = queryParams.get("keyword") || "";
+  const query = queryParams.get("query") || "";
 
   const [searchResult, setSearchResult] = useState<Film[]>([]);
 
