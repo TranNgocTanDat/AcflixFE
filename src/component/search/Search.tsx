@@ -10,16 +10,11 @@ const Search = () => {
   // Store value search and result search
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-
-  useEffect(() => {
-    if (searchTerm.trim() !== "") {
-      // Điều hướng đến trang kết quả mỗi khi giá trị tìm kiếm thay đổi
-      navigate(`/result?query=${searchTerm}`);
-    } else {
-      // navigate(`/`);
-    }
-  }, [searchTerm, navigate]);
-
+  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
+    event.preventDefault();
+    if (searchTerm.trim() === "") return;
+    navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+  }
 
   return (
     <>

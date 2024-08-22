@@ -1,10 +1,10 @@
-// import ReactPlayer from "react-player";
-import { Film } from "../../api/fake-api";
-import useDatas from "../../api/useData";
 import { FaPlay } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import "./style.css";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Film } from "../../model/Film";
+import { filmFindNewReleased } from "../../services/filmApi";
 
 const getRandomItem = (arr: Film[]): Film => {
   const randomIndex = Math.floor(Math.random() * arr.length);
@@ -12,24 +12,33 @@ const getRandomItem = (arr: Film[]): Film => {
 };
 
 const Intro = () => {
-  const { dataFilm, error } = useDatas();
+  const [newReleased, setNewReleased] = useState<Film[]>([]); // create state to store data new released
+
+  useEffect(() => {
+    filmFindNewReleased(10)
+      .then((response) => {
+        setNewReleased(response.items);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
   // Chọn một mục ngẫu nhiên từ danh sách dữ liệu
-  const randomFilm = dataFilm.length > 0 ? getRandomItem(dataFilm) : null;
+  const randomFilm = newReleased.length > 0 ? getRandomItem(newReleased) : null;
 
-  const getCoverSrc = (data: Film) =>{
+  const getCoverSrc = (data: Film) => {
     return data.cover.reduce((acc, item) => {
       if (item.width > acc.width) {
         return item;
       }
       return acc;
-    })
-  }
+    });
+  };
 
   return (
     <>
       <div>
-        {error && <p>{error}</p>}
         {randomFilm && (
           <div key={randomFilm.id} className="info">
             <div className="poster">
@@ -50,7 +59,7 @@ const Intro = () => {
                 <div className="intro-bottom">
                   <div className="bottom-play">
                     <Link
-                      to={`/detail/${randomFilm.id}`}
+                      to={`/watch/${randomFilm.id}`}
                       className="bottom-detail"
                     >
                       <button>
@@ -60,10 +69,12 @@ const Intro = () => {
                     </Link>
                   </div>
                   <div className="bottom-otherInfo">
-                    <button>
-                      <FaCircleInfo className="icon" />
-                      Thông tin khác
-                    </button>
+                    <Link to={`/film/${randomFilm.id}`}>
+                      <button>
+                        <FaCircleInfo className="icon" />
+                        Thông tin khác
+                      </button>
+                    </Link>
                   </div>
                   <div className="bottom-restriction">
                     <p>{randomFilm.restriction}+</p>
