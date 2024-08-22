@@ -13,8 +13,8 @@ export const filmFindNewReleased = async (limit = 5, offset = 0) => {
 }
 
 //get film have new episodes
-export const filmHaveNewEpisodes = async () => {
-    return await api.get<Page<Film>>("/browse/films/new-episode");
+export const filmHaveNewEpisodes = async (limit = 6) => {
+    return await api.get<Page<Film>>("/browse/films/new-episode", {params: {limit}});
 }
 
 //get film by id
