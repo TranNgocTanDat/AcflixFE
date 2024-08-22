@@ -37,7 +37,7 @@ export interface Film {
 }
 
 const getDataApi = async (): Promise<Film[]> => {
-    const responseApi = await fetch("https://2726-2402-800-6310-c187-5896-960b-62b0-fbac.ngrok-free.app/api/browse/films/new-released");
+    const responseApi = await fetch("http://192.168.88.175:8080/api/browse/films/new-released");
     const data = await responseApi.json();
     return data.items as Film[];
 }

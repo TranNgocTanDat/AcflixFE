@@ -23,7 +23,7 @@ const handleLogin = async (email: string, password: string): Promise<void> => {
     const { token } = response.data;
     localStorage.setItem("token", token);
 
-    window.location.href = "/";
+    
   } catch (error) {
     console.error("Đăng nhập thất bại:", error);
     alert("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.");

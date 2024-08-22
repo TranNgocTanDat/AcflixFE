@@ -1,4 +1,5 @@
 export interface Page<T> {
+    data: any;
     items: T[];
     totalItems: number;
     isFirst: boolean;   
@@ -8,5 +9,4 @@ export interface Page<T> {
     limit: number;
     pageSize: number;
 
-    
 }

@@ -23,7 +23,7 @@ const AppRouter: React.FC = () => {
     {
       path: "/result",
       element: <Result />,
-    },
+    }
   ];
 
   const router = createBrowserRouter([
@@ -49,7 +49,7 @@ const AppRouter: React.FC = () => {
       element: <Register />,
     },
     {
-      path: "/listfilm",
+      path: "/category/:id/films",
       element: <ListFilm />,
     },
   ]);

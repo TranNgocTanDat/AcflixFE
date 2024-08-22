@@ -1,44 +1,41 @@
 import { useEffect, useState } from "react";
-import SliderHome from "../../component/sliderShow/Slider";
+
 import "./style.scss";
 import { Film } from "../../api/fake-api";
-import Header from "../../Layout/Header/Header";
-import Footer from "../../Layout/Footer/Footer";
-import { filmFindNewReleased } from "../../services/filmApi";
+
+import { useParams } from "react-router-dom";
+import { findCategoryById } from "../../services/categoryApi";
 
 const ListFilm = () => {
-  const [newReleased, setNewReleased] = useState<Film[]>([]);
-  const [listFilms, setListFilms] = useState<Film[]>([]);
+  const [categriesById, setCategoriesById] = useState<Film[]>([]); // create state to store data categories by id
+  const [films, setFilms] = useState<Film[]>([]);
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
-    filmFindNewReleased(10)
-      .then((response) => {
-        setNewReleased(response.items);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+    if (id) {
+      findCategoryById(id, 10)
+        .then((response) => {
+          setCategoriesById(response.items); // Adjusted to use `response.data.items` based on typical API responses
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    }
+  }, [id]);
 
   return (
     <>
-      <Header></Header>
-      <div className="slide top10">
-        <div className="slide-title">Phim nổi bật</div>
-        <SliderHome dataFilm={newReleased} />
-      </div>
-
-      <div className="list-film">
-        <div className="list-title">Danh sách phim</div>
-        <div className="list">
-          {listFilms.length > 0 ? (
-            <div className="list-item"></div>
-          ) : (
-            <p>Không tìm thấy kết quả</p>
-          )}
+      <div>
+        <h1>Thể loại: {id}</h1>
+        <div className="film-list">
+          {films.map((film) => (
+            <div key={film.id} className="film-item">
+              <h3>{film.name}</h3>
+              <p>{film.description}</p>
+            </div>
+          ))}
         </div>
       </div>
-      <Footer></Footer>
     </>
   );
 };
