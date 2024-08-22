@@ -13,12 +13,12 @@ const normalizeString = (str: string): string => {
 const Result: React.FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const query = queryParams.get("keyword") || "";
+  const query = queryParams.get("query") || "";
 
   const [searchResult, setSearchResult] = useState<Film[]>([]);
 
   useEffect(() => {
-    searchFilm(query).then((response) => {
+    searchFilm(query, 10, 0, "").then((response) => {
       setSearchResult(response.items);
     });
   }, [query]);

@@ -9,5 +9,33 @@
   .slider-content {
     position: relative;
 
+    .slick-dots {
+      width: 20%;
+      right: 0;
+      bottom: 380px;
+      text-align: right;
+      max-height: 25px;
+      li {
+        margin: 0 5px;
+        &.slick-active button {
+          background-color: #434141; // Màu sắc của dấu chấm khi active
+
+        }
+        button {
+          margin-top: 10px;
+          padding: 1px;
+          width: 20px; // Đường kính của dấu chấm
+          height: 0.1rem;
+          background-color: #626262; // Màu sắc mặc định của dấu chấm
+          border: none;
+          transition: background-color 0.3s ease;
+          text-indent: -9999px;
+          
+        }
+      }
+      li.slick-active button {
+        background-color: rgb(190, 189, 189);
+      }
+    }
   }
 }

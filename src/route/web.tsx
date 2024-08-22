@@ -18,13 +18,13 @@ import WatchPage from "../pages/WatchPage/WatchPage.tsx"; // Import trang xem ph
 import ListFilm from "../pages/ListFilm/ListFilm.tsx";
 
 const AppRouter: React.FC = () => {
-  const userRouters: RouteObject[] = [
+  const userRouters: RouteObject[] = [ 
     {
       path: "/",
       element: <HomePage />,
     },
     {
-      path: "/result",
+      path: "/search",
       element: <Result />,
     },
     {
