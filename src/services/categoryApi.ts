@@ -13,7 +13,8 @@ export const findCategory = async (limit: number, offset = 0, sort = 0) => {
   return await api.get<Page<Category>>("/categories", { params: { limit, offset, sort } });
 }
 
-export const findCategoryById = async (id: string, limit: number, offset = 0, sort ="") => {
-  return await api.get<Page<Film>>(`/category/${id}/films`, { params: { limit, offset, sort } });
+export const findFilmByCate = async (id: string, limit: number, offset: number, sort ="") => {
+  return await api.get<Page<Film>>(`/categories/${id}/films`, { params: { limit, offset, sort } });
+
 }
 
