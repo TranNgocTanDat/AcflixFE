@@ -18,7 +18,7 @@ const Search = () => {
 
   return (
     <>
-      {/* <form className="search-container" onSubmit={handleSubmit}> */}
+      <form className="search-container" onSubmit={handleSubmit}>
       <div className="search-box f_flex">
         <input
           type="text"
@@ -32,7 +32,7 @@ const Search = () => {
           <FaSearch className="iconSearch" />
         </button>
       </div>
-      {/* </form> */}
+      </form>
     </>
   );
 };
