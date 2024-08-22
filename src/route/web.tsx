@@ -41,16 +41,16 @@ const AppRouter: React.FC = () => {
       children: userRouters,
     },
     {
+      path: "/category/:categoryId",
+      element: <ListFilm />,
+    },
+    {
       path: "/login",
       element: <Login />,
     },
     {
       path: "/register",
       element: <Register />,
-    },
-    {
-      path: "/listfilm",
-      element: <ListFilm />,
     },
   ]);
 
