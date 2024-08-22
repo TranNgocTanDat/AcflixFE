@@ -1,6 +1,8 @@
 import { Film } from "../api/fake-api";
 import { Page } from "../model/Page";
 import api from "./api";
+import {Vote} from "../model/Vote.ts";
+import {Comment} from "../model/Comment.ts";
 
 // get new released film
 export const filmFindNewReleased = async (limit = 5, offset = 0) => {
@@ -36,23 +38,23 @@ export const postFilmComment = async(id: string, content: string) => {
 
 //get comments of film
 export const getFilmComments = async(id: string, limit: number, offset = 0, sort ="") => {
-    return await api.get<Page<Comment>>(`/film/${id}/comments`, {params: {limit, offset, sort}});
+    return await api.get<Page<Comment>>(`/films/${id}/comments`, {params: {limit, offset, sort}});
 }
 
 //get related film
 export const findRelatedFilm = async (id: string) => {
-    return await api.get<Film[]>(`/film/${id}/related`);
+    return await api.get<Film[]>(`/films/${id}/relation`);
 }
 
 //Vote film
 //post vote of film
 export const postFilmVote = async(id: string, vote: number) => {
-    return await api.post("/film/${id}/vote", {vote});
+    return await api.post(`/films/${id}/votes`, {vote});
 }
 
 //get vote of film
 export const getFilmVote = async(id: string) => {
-    return await api.get<number>(`/film/${id}/vote`);
+    return await api.get<Vote>(`/films/${id}/votes`);
 }
 
 
