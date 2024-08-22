@@ -66,5 +66,7 @@ export default {
   },
   setDefaultHeader(key: string, data?: string) {
     request.defaults.headers.common[key] = data;
+    console.log(data);
+    
   },
 };

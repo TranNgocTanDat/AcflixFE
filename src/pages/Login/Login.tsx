@@ -1,8 +1,54 @@
 import { NavLink } from "react-router-dom";
 import Header from "../../Layout/Header/Header";
 import "./style.scss";
+import React, { useState, FormEvent } from "react";
+import axios from "axios";
+import { authenticate, getUserInfo } from "../../services/authApi";
+import api from "../../services/api";
 
-const Login = () => {
+interface LoginResponse {
+  token: string;
+}
+
+const handleLogin = async (email: string, password: string): Promise<void> => {
+  try {
+    const response = await axios.post<LoginResponse>(
+      "https://192.168.88.175:8080/login",
+      {
+        email,
+        password,
+      }
+    );
+
+    const { token } = response.data;
+    localStorage.setItem("token", token);
+
+    window.location.href = "/";
+  } catch (error) {
+    console.error("Đăng nhập thất bại:", error);
+    alert("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.");
+  }
+};
+
+const Login: React.FC = () => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const handleSubmit = (e: FormEvent): void => {
+    e.preventDefault();
+    authenticate(email, password)
+      .then((res) => {
+        console.log(res);
+
+        api.setDefaultHeader("Authorization", "Bearer " + res.accessToken);
+        // luu accessToken vo localstorage
+        return getUserInfo();
+      })
+      .then((info) => {
+        // luu user info vao redux
+      });
+  };
+
   return (
     <>
       <div className="bodylogin">
@@ -12,12 +58,20 @@ const Login = () => {
           <div className="header-bottom">
             <div className="header-right w3agile">
               <div className="header-left-bottom agileinfo">
-                <form action="#" method="post">
-                  <input type="text" placeholder="Tên tài khoản" name="name" />
+                <form onSubmit={handleSubmit} action="#" method="post">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
                   <input
                     type="password"
                     placeholder="Mật khẩu"
                     name="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                   <div className="remember">
                     <label className="checkbox">
@@ -32,7 +86,6 @@ const Login = () => {
                     <div className="clear"> </div>
                   </div>
 
-                  {/* <input type="submit" value="Login" /> */}
                   <div className="button-login">
                     <NavLink to={"/register"}>
                       <button type="submit">Đăng Ký</button>
