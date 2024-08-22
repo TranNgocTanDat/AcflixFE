@@ -19,6 +19,11 @@
 .header .header__logo {
   width: 13%;
   text-align: right;
+  height: auto;
+}
+.header .header__logo img {
+  width: auto;
+  height: 56px;
 }
 .header .navlink {
   width: 47%;
