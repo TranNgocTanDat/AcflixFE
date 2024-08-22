@@ -1,7 +1,3 @@
-
-
-import useDatas from "../../api/useData";
-
 import { FaPlay } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import "./style.css";
@@ -44,7 +40,6 @@ const Intro = () => {
 
       <>
         <div>
-
           {randomFilm && (
               <div key={randomFilm.id} className="info">
                 <div className="poster">
