@@ -8,6 +8,7 @@ import FilmItem from "../../component/FilmItem";
 import { findFilmByCate } from "../../services/categoryApi";
 import { useParams } from "react-router-dom";
 import { Page } from "../../model/Page";
+import AuthorizationFilter from "../../features/auth/AuthorizationFiler";
 
 const ListFilm = () => {
   const [limit] = useState(12);
@@ -55,54 +56,56 @@ const ListFilm = () => {
   if (loading) return <div>Đang tải...</div>;
 
   return (
-    <>
-      <Header></Header>
+    <AuthorizationFilter isAuthenticated>
+      <>
+        <Header></Header>
 
-      <div className="list-film">
-        <div className="list-title">Danh sách phim</div>
-        <div className="list">
-          {listFilms.items.length > 0 ? (
-            <div className="list-item">
-              {listFilms.items.map((film) => (
-                <div className="film-item">
-                  <FilmItem data={film} key={film.id} />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p>Không tìm thấy kết quả</p>
-          )}
+        <div className="list-film">
+          <div className="list-title">Danh sách phim</div>
+          <div className="list">
+            {listFilms.items.length > 0 ? (
+              <div className="list-item">
+                {listFilms.items.map((film) => (
+                  <div className="film-item">
+                    <FilmItem data={film} key={film.id} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p>Không tìm thấy kết quả</p>
+            )}
+          </div>
         </div>
-      </div>
 
-      <div className="pagination">
-        <button
-          onClick={() => handlePageChange(page - 1)}
-          disabled={page === 1}
-          className="button-set-page"
-        >
-          Trang trước
-        </button>
-        {totalPages.map((page) => (
+        <div className="pagination">
           <button
-            key={page}
-            onClick={() => handlePageChange(page)}
-            className="button-page"
+            onClick={() => handlePageChange(page - 1)}
+            disabled={page === 1}
+            className="button-set-page"
           >
-            {page}
+            Trang trước
           </button>
-        ))}
-        <button
-          onClick={() => handlePageChange(page + 1)}
-          // disabled={page === totalPages}
-          className="button-set-page"
-        >
-          Trang sau
-        </button>
-      </div>
+          {totalPages.map((page) => (
+            <button
+              key={page}
+              onClick={() => handlePageChange(page)}
+              className="button-page"
+            >
+              {page}
+            </button>
+          ))}
+          <button
+            onClick={() => handlePageChange(page + 1)}
+            // disabled={page === totalPages}
+            className="button-set-page"
+          >
+            Trang sau
+          </button>
+        </div>
 
-      <Footer></Footer>
-    </>
+        <Footer></Footer>
+      </>
+    </AuthorizationFilter>
   );
 };
 

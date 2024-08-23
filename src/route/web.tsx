@@ -16,9 +16,10 @@ import Register from "../pages/Register/Register.tsx";
 import FilmDetailsPage from "../pages/FilmDetailsPage/FilmDetailsPage.tsx"; // Import trang chi tiết phim
 import WatchPage from "../pages/WatchPage/WatchPage.tsx"; // Import trang xem phim
 import ListFilm from "../pages/ListFilm/ListFilm.tsx";
+import AuthorizationFilter from "../features/auth/AuthorizationFiler.tsx";
 
 const AppRouter: React.FC = () => {
-  const userRouters: RouteObject[] = [ 
+  const userRouters: RouteObject[] = [
     {
       path: "/",
       element: <HomePage />,
@@ -63,7 +64,6 @@ const AppRouter: React.FC = () => {
       path: "/register",
       element: <Register />,
     },
-
   ]);
 
   return <RouterProvider router={router} />;
