@@ -1,18 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Header from "../../Layout/Header/Header";
 import "./style.scss";
 import React, { useState, FormEvent } from "react";
 import axios from "axios";
 import { authenticate, getUserInfo } from "../../services/authApi";
 import api from "../../services/api";
+import UserInfo from "../../model/UserInfo";
+import { useAppDispatch, useAuthAction } from "../../redux/store";
 
 interface LoginResponse {
   token: string;
 }
 
+interface UserState {
+  user: UserInfo;
+}
+
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const dispath = useAppDispatch();
+  const { setPrinciple } = useAuthAction();
+  const navigator = useNavigate();
 
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
@@ -22,10 +31,13 @@ const Login: React.FC = () => {
 
         api.setDefaultHeader("Authorization", "Bearer " + res.accessToken);
         // luu accessToken vo localstorage
+        localStorage.setItem("accessToken", res.accessToken);
         return getUserInfo();
       })
       .then((info) => {
         // luu user info vao redux
+        dispath(setPrinciple(info));
+        navigator("/");
       });
   };
 

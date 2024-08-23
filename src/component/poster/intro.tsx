@@ -1,9 +1,12 @@
+
+import { Film } from "../../api/fake-api";
+import useDatas from "../../api/useData";
+
 import { FaPlay } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Film } from "../../model/Film";
 import { filmFindNewReleased } from "../../services/filmApi";
 
 const getRandomItem = (arr: Film[]): Film => {
@@ -37,52 +40,51 @@ const Intro = () => {
   };
 
   return (
-
-      <>
-        <div>
-          {randomFilm && (
-              <div key={randomFilm.id} className="info">
-                <div className="poster">
-                  {randomFilm.cover.length > 0 && (
-                      <div className="img-wrapper">
-                        <img
-                            src={getCoverSrc(randomFilm).url}
-                            alt=""
-                            className="img-poster"
-                        />
-                      </div>
-                  )}
-                  <div className="overlay">
-                    <div className="introInfo">
-                      <h1>{randomFilm.name}</h1>
-                      <p>{randomFilm.description}</p>
-                    </div>
-                    <div className="intro-bottom">
-                      <div className="bottom-play">
-                        <Link to={`/film/${randomFilm.id}`}>
-                          <button>
-                            <FaPlay className="icon" />
-                            Phát
-                          </button>
-                        </Link>
-                      </div>
-                      <div className="bottom-otherInfo">
-                        <button>
-                          <FaCircleInfo className="icon" />
-                          Thông tin khác
-                        </button>
-                      </div>
-                      <div className="bottom-restriction">
-                        <p>{randomFilm.restriction}+</p>
-                      </div>
-                    </div>
+    <>
+      <div>
+        {randomFilm && (
+          <div key={randomFilm.id} className="info">
+            <div className="poster">
+              {randomFilm.cover.length > 0 && (
+                <div className="img-wrapper">
+                  <img
+                    src={getCoverSrc(randomFilm).url}
+                    alt=""
+                    className="img-poster"
+                  />
+                </div>
+              )}
+              <div className="overlay">
+                <div className="introInfo">
+                  <h1>{randomFilm.name}</h1>
+                  <p>{randomFilm.description}</p>
+                </div>
+                <div className="intro-bottom">
+                  <div className="bottom-play">
+                    <Link to={`/film/${randomFilm.id}`}>
+                      <button>
+                        <FaPlay className="icon" />
+                        Phát
+                      </button>
+                    </Link>
+                  </div>
+                  <div className="bottom-otherInfo">
+                    <button>
+                      <FaCircleInfo className="icon" />
+                      Thông tin khác
+                    </button>
+                  </div>
+                  <div className="bottom-restriction">
+                    <p>{randomFilm.restriction}+</p>
 
                   </div>
                 </div>
               </div>
-          )}
-        </div>
-      </>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
