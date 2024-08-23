@@ -18,7 +18,7 @@ const HomePage = () => {
   const [categries, setcategries] = useState<CategoryDetails[]>([]); // create state to store data categories
 
   useEffect(() => {
-    filmFindNewReleased(10)
+    filmFindNewReleased(6)
       .then((response) => {
         setNewReleased(response.items);
       })
@@ -27,7 +27,7 @@ const HomePage = () => {
       });
 
     // new episodes
-    filmHaveNewEpisodes()
+    filmHaveNewEpisodes(6)
       .then((response) => {
         setNewEpisodes(response.items);
       })

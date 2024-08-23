@@ -15,40 +15,6 @@
   border: 1px solid #333;
   background: black;
 }
-.watch-page .video-player .hd {
-  position: absolute;
-  right: 14%;
-  top: 88%;
-  cursor: pointer;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  text-align: center;
-}
-.watch-page .video-player .hd.active + .quality-btn {
-  display: block;
-}
-.watch-page .video-player .quality-btn {
-  display: none;
-  position: absolute;
-  right: 14%;
-  top: 83%;
-  cursor: pointer;
-  background: #444;
-  color: #fff;
-  border-radius: 4px;
-}
-.watch-page .video-player .quality-btn button {
-  background-color: #333;
-  color: #fff;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  margin: 5px 0;
-}
-.watch-page .video-player .quality-btn button:hover {
-  background-color: #444;
-}
 .watch-page .film-info {
   margin-top: 30px;
 }
@@ -77,4 +43,88 @@
 .watch-page .film-reviews .reviews-content p {
   font-size: 16px;
   color: #ddd;
-}/*# sourceMappingURL=style.css.map */
+}
+.watch-page .episode-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  position: relative;
+}
+.watch-page .episode-navigation button {
+  background-color: #ff7f50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.watch-page .episode-navigation button:hover {
+  background-color: #ff5722;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+.watch-page .episode-navigation button:active {
+  transform: translateY(2px);
+}
+.watch-page .episode-navigation button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.watch-page .episode-navigation .prev-button {
+  position: absolute;
+  left: 0;
+}
+.watch-page .episode-navigation .next-button {
+  position: absolute;
+  right: 0;
+}
+.watch-page .episode-selection {
+  margin-top: 50px;
+}
+.watch-page .episode-selection h3 {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.watch-page .episode-selection .episodes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.watch-page .episode-selection .episodes-list button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 70px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.watch-page .episode-selection .episodes-list button:hover {
+  background-color: #555;
+}
+.watch-page .episode-selection .episodes-list button.active {
+  background-color: #ff7f50;
+}
+.watch-page .film__details__form {
+  margin-top: 20px;
+}
+.watch-page .film__details__form textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  resize: none;
+  margin-bottom: 10px;
+  background-color: #2b2b2b;
+  color: #fff;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

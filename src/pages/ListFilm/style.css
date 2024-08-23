@@ -1,37 +1,79 @@
-.list-film .list-title {
+.list-film {
+  display: flex;
+  text-align: center;
+}
+.list-film .sort-options {
+  font-size: 18px;
+  position: absolute;
+  right: 5%;
+}
+.list-film .sort-options label {
+  margin-right: 10px;
+}
+.list-film .sort-options select {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.list-title {
   margin-left: 20px;
   font-size: 30px;
+  padding-bottom: 20px;
 }
-.list-film .list {
+
+.list {
   width: 100%;
 }
-.list-film .list .list-item {
+.list .list-item {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
-.list-film .list .list-item .film-item {
+.list .list-item .film-item {
   width: 20%;
-  flex: 0 0 calc(20% - 10px);
-  box-sizing: border-box;
-  height: auto;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin: 10px;
 }
 
 .pagination {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
 }
-
-.pagination button {
-  margin: 0 5px;
+.pagination .button-set-page {
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(64, 63, 63);
+  color: white;
 }
-
-.pagination button.active {
-  font-weight: bold;
-  background-color: #007bff;
-  color: #fff;
+.pagination .button-set-page:last-child {
+  margin-left: 10px;
+}
+.pagination .button-set-page:hover {
+  cursor: pointer;
+  color: #dddddd;
+}
+.pagination .button-page {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(64, 63, 63);
+  color: white;
+  margin-left: 10px;
+}
+.pagination .button-page:hover {
+  cursor: pointer;
+  color: #ddd;
 }/*# sourceMappingURL=style.css.map */
